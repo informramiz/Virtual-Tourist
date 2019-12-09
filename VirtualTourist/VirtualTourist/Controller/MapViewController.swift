@@ -54,5 +54,10 @@ extension MapViewController: MKMapViewDelegate {
         
         return annotationView
     }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        performSegue(withIdentifier: "showAlbum", sender: nil)
+        mapView.deselectAnnotation(view.annotation, animated: true)
+    }
 }
 
