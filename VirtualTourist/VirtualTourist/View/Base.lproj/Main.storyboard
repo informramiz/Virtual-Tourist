@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MgK-Vh-h83">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="landscape" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,11 +13,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MapViewController" customModule="VirtualTourist" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="zHQ-9a-b84">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="44" y="44" width="808" height="349"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -44,17 +44,17 @@
             <objects>
                 <viewController id="gy4-LI-B8C" customClass="AlbumViewController" customModule="VirtualTourist" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PNJ-IK-vU9">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="YDC-8Y-1JJ">
-                                <rect key="frame" x="0.0" y="88" width="414" height="200"/>
+                                <rect key="frame" x="44" y="44" width="808" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="XHa-j8-D7o"/>
                                 </constraints>
                             </mapView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eFl-An-ump">
-                                <rect key="frame" x="0.0" y="298" width="414" height="501"/>
+                                <rect key="frame" x="44" y="254" width="808" height="94"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" sectionInsetReference="safeArea" id="DXB-oz-e0z">
                                     <size key="itemSize" width="50" height="50"/>
@@ -73,33 +73,38 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Collection" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DYu-a1-wWZ">
-                                <rect key="frame" x="13" y="807" width="414" height="55"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Images" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uLt-Vh-wzL">
-                                <rect key="frame" x="176" y="438" width="82" height="20.5"/>
+                                <rect key="frame" x="417" y="208.5" width="82" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Kqi-BG-2h4">
-                                <rect key="frame" x="197" y="492" width="20" height="20"/>
+                                <rect key="frame" x="438" y="262.5" width="20" height="20"/>
                             </activityIndicatorView>
+                            <label autoresizesSubviews="NO" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Collection" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="150" translatesAutoresizingMaskIntoConstraints="NO" id="DYu-a1-wWZ" userLabel="New Collection Label">
+                                <rect key="frame" x="1054" y="144" width="150" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="E7c-4c-InL"/>
+                                    <constraint firstAttribute="height" constant="55" id="KWp-iX-2M6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="YDC-8Y-1JJ" firstAttribute="leading" secondItem="Gba-fA-MeA" secondAttribute="leading" id="037-EK-VS2"/>
-                            <constraint firstItem="DYu-a1-wWZ" firstAttribute="top" secondItem="eFl-An-ump" secondAttribute="bottom" constant="8" id="6ty-ee-PNl"/>
+                            <constraint firstItem="eFl-An-ump" firstAttribute="bottom" secondItem="DYu-a1-wWZ" secondAttribute="top" constant="10" id="6ty-ee-PNl"/>
                             <constraint firstItem="Gba-fA-MeA" firstAttribute="trailing" secondItem="YDC-8Y-1JJ" secondAttribute="trailing" id="EoV-wR-OwJ"/>
                             <constraint firstItem="YDC-8Y-1JJ" firstAttribute="top" secondItem="Gba-fA-MeA" secondAttribute="top" id="Fh7-n7-2nd"/>
                             <constraint firstItem="Kqi-BG-2h4" firstAttribute="top" secondItem="uLt-Vh-wzL" secondAttribute="bottom" constant="33.5" id="IL8-Rv-dxN"/>
+                            <constraint firstItem="Gba-fA-MeA" firstAttribute="bottom" secondItem="DYu-a1-wWZ" secondAttribute="bottom" id="PPv-sC-7dg"/>
                             <constraint firstItem="Gba-fA-MeA" firstAttribute="trailing" secondItem="eFl-An-ump" secondAttribute="trailing" id="XKy-up-sGU"/>
                             <constraint firstItem="eFl-An-ump" firstAttribute="top" secondItem="YDC-8Y-1JJ" secondAttribute="bottom" constant="10" id="YME-P3-7G6"/>
-                            <constraint firstItem="uLt-Vh-wzL" firstAttribute="centerY" secondItem="PNJ-IK-vU9" secondAttribute="centerY" id="Z4O-EC-HER"/>
+                            <constraint firstItem="uLt-Vh-wzL" firstAttribute="centerY" secondItem="Gba-fA-MeA" secondAttribute="centerY" id="Z4O-EC-HER"/>
+                            <constraint firstItem="DYu-a1-wWZ" firstAttribute="centerX" secondItem="PNJ-IK-vU9" secondAttribute="centerX" id="bE4-Qy-8C8"/>
                             <constraint firstItem="Kqi-BG-2h4" firstAttribute="centerX" secondItem="PNJ-IK-vU9" secondAttribute="centerX" id="p3i-kr-std"/>
                             <constraint firstItem="uLt-Vh-wzL" firstAttribute="centerX" secondItem="PNJ-IK-vU9" secondAttribute="centerX" constant="10" id="sig-jC-OSv"/>
                             <constraint firstItem="eFl-An-ump" firstAttribute="leading" secondItem="Gba-fA-MeA" secondAttribute="leading" id="tfM-d9-RNG"/>
@@ -118,7 +123,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MgK-Vh-h83" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ctY-hz-Qbs">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
