@@ -45,8 +45,6 @@ class FlickerAPI {
     
     class func fetchPhotos(pin: Pin, page: Int, completion: @escaping (FlickerImagesResponse?, Error?) -> Void) {
         let fetchEndPoint = EndPoint.fetchPhotos(pin.latitude, pin.longitude, page)
-        print("url: \(fetchEndPoint.stringValue)")
-        
         let notifyOnMain = {(data: FlickerImagesResponse?, error: Error?) in
             DispatchQueue.main.async {
                 completion(data, error)
@@ -61,7 +59,6 @@ class FlickerAPI {
             
             do {
                 let flickerImagesResponse = try JSONDecoder().decode(FlickerImagesResponse.self, from: data)
-                print(flickerImagesResponse.imagesPage.images[0].url)
                 notifyOnMain(flickerImagesResponse, nil)
             } catch {
                 notifyOnMain(nil, error)
