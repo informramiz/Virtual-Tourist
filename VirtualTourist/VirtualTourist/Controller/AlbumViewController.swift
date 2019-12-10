@@ -22,6 +22,10 @@ class AlbumViewController: UIViewController {
         newCollectionButton.isEnabled = false
         mapView.isUserInteractionEnabled = false
         print(pin.latitude)
+        
+        FlickerAPI.fetchPhotos(pin: pin, page: 1) { (flickerImagesResponse, error) in
+            print(flickerImagesResponse)
+        }
     }
     
     @IBAction func newCollection(_ sender: Any) {

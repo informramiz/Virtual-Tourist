@@ -21,6 +21,10 @@
 		1882FE6B239FE1700039600B /* Pin+Extra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1882FE6A239FE1700039600B /* Pin+Extra.swift */; };
 		1882FE6D239FE1A30039600B /* Photo+Extra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1882FE6C239FE1A30039600B /* Photo+Extra.swift */; };
 		1882FE6F239FE2950039600B /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1882FE6E239FE2950039600B /* DataController.swift */; };
+		1882FE71239FF0550039600B /* FlickerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1882FE70239FF0550039600B /* FlickerAPI.swift */; };
+		1882FE74239FF0D10039600B /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1882FE73239FF0D10039600B /* Photo.swift */; };
+		1882FE76239FF1280039600B /* ImagesPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1882FE75239FF1280039600B /* ImagesPage.swift */; };
+		1882FE78239FF19B0039600B /* FlickerImagesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1882FE77239FF19B0039600B /* FlickerImagesResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +44,10 @@
 		1882FE6A239FE1700039600B /* Pin+Extra.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pin+Extra.swift"; sourceTree = "<group>"; };
 		1882FE6C239FE1A30039600B /* Photo+Extra.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Photo+Extra.swift"; sourceTree = "<group>"; };
 		1882FE6E239FE2950039600B /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		1882FE70239FF0550039600B /* FlickerAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickerAPI.swift; sourceTree = "<group>"; };
+		1882FE73239FF0D10039600B /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		1882FE75239FF1280039600B /* ImagesPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesPage.swift; sourceTree = "<group>"; };
+		1882FE77239FF19B0039600B /* FlickerImagesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickerImagesResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +166,8 @@
 		1882FE68239FE1530039600B /* Remote */ = {
 			isa = PBXGroup;
 			children = (
+				1882FE72239FF0820039600B /* Responses */,
+				1882FE70239FF0550039600B /* FlickerAPI.swift */,
 			);
 			path = Remote;
 			sourceTree = "<group>";
@@ -169,6 +179,16 @@
 				1882FE6C239FE1A30039600B /* Photo+Extra.swift */,
 			);
 			path = "Model Extensions";
+			sourceTree = "<group>";
+		};
+		1882FE72239FF0820039600B /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				1882FE73239FF0D10039600B /* Photo.swift */,
+				1882FE75239FF1280039600B /* ImagesPage.swift */,
+				1882FE77239FF19B0039600B /* FlickerImagesResponse.swift */,
+			);
+			path = Responses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,10 +263,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				1882FE5D239FD17B0039600B /* UIViewController+Extension.swift in Sources */,
+				1882FE78239FF19B0039600B /* FlickerImagesResponse.swift in Sources */,
 				1882FE4A239E6CEB0039600B /* VirtualTourist.xcdatamodeld in Sources */,
 				1882FE5A239E7D770039600B /* AlbumViewController.swift in Sources */,
 				1882FE6D239FE1A30039600B /* Photo+Extra.swift in Sources */,
 				1882FE44239E6CEB0039600B /* MapViewController.swift in Sources */,
+				1882FE71239FF0550039600B /* FlickerAPI.swift in Sources */,
+				1882FE76239FF1280039600B /* ImagesPage.swift in Sources */,
+				1882FE74239FF0D10039600B /* Photo.swift in Sources */,
 				1882FE6F239FE2950039600B /* DataController.swift in Sources */,
 				1882FE66239FD85D0039600B /* CollectionDataSource.swift in Sources */,
 				1882FE6B239FE1700039600B /* Pin+Extra.swift in Sources */,
