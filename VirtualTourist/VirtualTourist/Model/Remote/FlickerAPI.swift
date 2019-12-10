@@ -7,10 +7,13 @@
 //
 
 import Foundation
+
 class FlickerAPI {
     struct Auth {
         static let API_KEY = "c6124d151ce794dbfb0fdbe6c138b0ce"
     }
+    
+    static let itemsPerPage = 20
     
     enum EndPoint {
         static let baseUrl = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=\(Auth.API_KEY)"
@@ -22,7 +25,7 @@ class FlickerAPI {
             case .base:
                 return EndPoint.baseUrl
             case .fetchPhotos(let latitude, let longitude, let page):
-                return EndPoint.baseUrl + "&bbox=\(getBbox(latitude, longitude))&extras=url_m&format=json&nojsoncallback=1&safe_search=1&per_page=20&page=\(page)"
+                return EndPoint.baseUrl + "&bbox=\(getBbox(latitude, longitude))&extras=url_m&format=json&nojsoncallback=1&safe_search=1&per_page=\(FlickerAPI.itemsPerPage)&page=\(page)"
             }
         }
         
@@ -66,5 +69,13 @@ class FlickerAPI {
         }
         
         task.resume()
+    }
+    
+    class func downloadImage(url: String, completion: @escaping (Data?, Error?) -> Void) {
+        URLSession.shared.dataTask(with: URL(string: url)!) { (data, response, error) in
+            DispatchQueue.main.async {
+                completion(data, error)
+            }
+        }
     }
 }
