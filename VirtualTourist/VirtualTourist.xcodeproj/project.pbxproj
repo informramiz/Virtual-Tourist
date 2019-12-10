@@ -25,6 +25,7 @@
 		1882FE74239FF0D10039600B /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1882FE73239FF0D10039600B /* Photo.swift */; };
 		1882FE76239FF1280039600B /* ImagesPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1882FE75239FF1280039600B /* ImagesPage.swift */; };
 		1882FE78239FF19B0039600B /* FlickerImagesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1882FE77239FF19B0039600B /* FlickerImagesResponse.swift */; };
+		1882FE7B23A028940039600B /* PhotoCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1882FE7A23A028940039600B /* PhotoCollectionCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		1882FE73239FF0D10039600B /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		1882FE75239FF1280039600B /* ImagesPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesPage.swift; sourceTree = "<group>"; };
 		1882FE77239FF19B0039600B /* FlickerImagesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickerImagesResponse.swift; sourceTree = "<group>"; };
+		1882FE7A23A028940039600B /* PhotoCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 		1882FE58239E6D6A0039600B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1882FE7923A028500039600B /* Custom Cells */,
 				1882FE61239FD4200039600B /* Custom Views */,
 				1882FE5E239FD3BE0039600B /* extensions */,
 				1882FE45239E6CEB0039600B /* Main.storyboard */,
@@ -189,6 +192,14 @@
 				1882FE77239FF19B0039600B /* FlickerImagesResponse.swift */,
 			);
 			path = Responses;
+			sourceTree = "<group>";
+		};
+		1882FE7923A028500039600B /* Custom Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1882FE7A23A028940039600B /* PhotoCollectionCell.swift */,
+			);
+			path = "Custom Cells";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,6 +283,7 @@
 				1882FE76239FF1280039600B /* ImagesPage.swift in Sources */,
 				1882FE74239FF0D10039600B /* Photo.swift in Sources */,
 				1882FE6F239FE2950039600B /* DataController.swift in Sources */,
+				1882FE7B23A028940039600B /* PhotoCollectionCell.swift in Sources */,
 				1882FE66239FD85D0039600B /* CollectionDataSource.swift in Sources */,
 				1882FE6B239FE1700039600B /* Pin+Extra.swift in Sources */,
 				1882FE63239FD4990039600B /* MyUICollectionView.swift in Sources */,
