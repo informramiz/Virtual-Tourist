@@ -15,12 +15,13 @@ class AlbumViewController: UIViewController {
     @IBOutlet weak var noImagesLabel: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var newCollectionButton: UIButton!
-    
+    var pin: Pin!
     override func viewDidLoad() {
         super.viewDidLoad()
         noImagesLabel.isHidden = true
         newCollectionButton.isEnabled = false
         mapView.isUserInteractionEnabled = false
+        print(pin.latitude)
     }
     
     @IBAction func newCollection(_ sender: Any) {

@@ -35,7 +35,7 @@ class MapViewController: UIViewController {
         let fetchRequest: NSFetchRequest<Pin> = Pin.fetchRequest()
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: true)]
         fetchedResultsContorller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: DataController.shared.viewContext, sectionNameKeyPath: nil, cacheName: nil)
-//        fetchedResultsContorller.delegate = self
+        fetchedResultsContorller.delegate = self
         
         do {
             try fetchedResultsContorller.performFetch()
@@ -82,6 +82,14 @@ class MapViewController: UIViewController {
         DataController.shared.viewContext.insert(pin)
         try? DataController.shared.viewContext.save()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showAlbum" {
+            let pin = sender as! Pin
+            let albumController = segue.destination as! AlbumViewController
+            albumController.pin = pin
+        }
+    }
 }
 
 extension MapViewController: MKMapViewDelegate {
@@ -99,26 +107,38 @@ extension MapViewController: MKMapViewDelegate {
     }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        performSegue(withIdentifier: "showAlbum", sender: nil)
         mapView.deselectAnnotation(view.annotation, animated: true)
+        let pin = getPin(view.annotation!.coordinate)
+        performSegue(withIdentifier: "showAlbum", sender: pin!)
+    }
+    
+    private func getPin(_ location: CLLocationCoordinate2D) -> Pin? {
+        let pins = fetchedResultsContorller.fetchedObjects ?? []
+        for pin in pins {
+            if pin.latitude == location.latitude && pin.longitude == location.longitude {
+                return pin
+            }
+        }
+        
+        return nil
     }
 }
 
-//extension MapViewController : NSFetchedResultsControllerDelegate {
-//    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-//        let a = 0
-//        print(a)
-//    }
-//
-//    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
-//        print("item changed")
-//    }
-//
-//    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
-//        print("section changed")
-//    }
-//
-//    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+extension MapViewController : NSFetchedResultsControllerDelegate {
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        let a = 0
+        print(a)
+    }
+
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        print("item changed")
+    }
+
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
+        print("section changed")
+    }
+
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
 //        setupMapMarkers()
-//    }
-//}
+    }
+}
