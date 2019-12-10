@@ -74,6 +74,13 @@ class CollectionDataSource<EntityType: NSManagedObject, CellType: UICollectionVi
         try? viewContext.save()
     }
     
+    func deleteAllItems() {
+        let items = fetchedResultsController.fetchedObjects ?? []
+        for item in items {
+            viewContext.delete(item)
+        }
+    }
+    
     // MARK: - NSFetchedResultsController delegate methods
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         collectionView.beginUpdates()

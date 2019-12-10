@@ -22,9 +22,7 @@ class AlbumViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         noImagesLabel.isHidden = true
-        newCollectionButton.isEnabled = false
         mapView.isUserInteractionEnabled = false
-        print(pin.latitude)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -46,6 +44,7 @@ class AlbumViewController: UIViewController {
                 let image = UIImage(data: imageData)
                 cell.imageView.image = image
             } else {
+                cell.imageView.image = nil
                 self.downloadImage(photo)
             }
         })
@@ -67,28 +66,43 @@ class AlbumViewController: UIViewController {
     }
     
     private func fetchPhotosFromNetwork() {
-        activityIndicator.startAnimating()
+        setLoading(true)
         let page = (collectionDataSource.totalItemsCount/FlickerAPI.itemsPerPage) + 1
         FlickerAPI.fetchPhotos(pin: pin, page: page) { (flickerImagesResponse, error) in
             guard let flickerImagesResponse = flickerImagesResponse else {
-                print(error!.localizedDescription)
-                self.activityIndicator.stopAnimating()
+                self.showErrorAlert(message: error!.localizedDescription)
+                self.setLoading(false)
                 return
             }
             
-            self.activityIndicator.stopAnimating()
-            for images in flickerImagesResponse.imagesPage.images {
+            self.setLoading(false)
+            let filteredImages = flickerImagesResponse.imagesPage.images.filter { (image) -> Bool in
+                image.url != nil
+            }
+            for image in filteredImages {
                 let photo = Photo(context: DataController.shared.viewContext)
                 photo.pin = self.pin
-                photo.imageUrl = images.url
-                DataController.shared.viewContext.insert(photo)
+                photo.imageUrl = image.url!
             }
             try? DataController.shared.viewContext.save()
             self.collectionView.reloadData()
+            self.noImagesLabel.isHidden = !filteredImages.isEmpty
+            self.newCollectionButton.isEnabled = !filteredImages.isEmpty
         }
     }
     
+    private func setLoading(_ isLoading: Bool) {
+        if isLoading {
+            activityIndicator.startAnimating()
+        } else {
+            activityIndicator.stopAnimating()
+        }
+        
+        newCollectionButton.isEnabled = !isLoading
+    }
+    
     @IBAction func newCollection(_ sender: Any) {
+        collectionDataSource.deleteAllItems()
         fetchPhotosFromNetwork()
     }
 }

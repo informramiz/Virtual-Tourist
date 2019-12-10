@@ -13,7 +13,8 @@ class FlickerAPI {
         static let API_KEY = "c6124d151ce794dbfb0fdbe6c138b0ce"
     }
     
-    static let itemsPerPage = 20
+    static let itemsPerPage = 10
+    static let maxPages = 500
     
     enum EndPoint {
         static let baseUrl = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=\(Auth.API_KEY)"
@@ -45,6 +46,7 @@ class FlickerAPI {
     
     class func fetchPhotos(pin: Pin, page: Int, completion: @escaping (FlickerImagesResponse?, Error?) -> Void) {
         let fetchEndPoint = EndPoint.fetchPhotos(pin.latitude, pin.longitude, page)
+        print(fetchEndPoint.stringValue)
         let notifyOnMain = {(data: FlickerImagesResponse?, error: Error?) in
             DispatchQueue.main.async {
                 completion(data, error)

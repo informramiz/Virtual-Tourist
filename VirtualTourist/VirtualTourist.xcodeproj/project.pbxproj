@@ -22,7 +22,7 @@
 		1882FE6D239FE1A30039600B /* Photo+Extra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1882FE6C239FE1A30039600B /* Photo+Extra.swift */; };
 		1882FE6F239FE2950039600B /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1882FE6E239FE2950039600B /* DataController.swift */; };
 		1882FE71239FF0550039600B /* FlickerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1882FE70239FF0550039600B /* FlickerAPI.swift */; };
-		1882FE74239FF0D10039600B /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1882FE73239FF0D10039600B /* Photo.swift */; };
+		1882FE74239FF0D10039600B /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1882FE73239FF0D10039600B /* Image.swift */; };
 		1882FE76239FF1280039600B /* ImagesPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1882FE75239FF1280039600B /* ImagesPage.swift */; };
 		1882FE78239FF19B0039600B /* FlickerImagesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1882FE77239FF19B0039600B /* FlickerImagesResponse.swift */; };
 		1882FE7B23A028940039600B /* PhotoCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1882FE7A23A028940039600B /* PhotoCollectionCell.swift */; };
@@ -46,7 +46,7 @@
 		1882FE6C239FE1A30039600B /* Photo+Extra.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Photo+Extra.swift"; sourceTree = "<group>"; };
 		1882FE6E239FE2950039600B /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		1882FE70239FF0550039600B /* FlickerAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickerAPI.swift; sourceTree = "<group>"; };
-		1882FE73239FF0D10039600B /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		1882FE73239FF0D10039600B /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		1882FE75239FF1280039600B /* ImagesPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesPage.swift; sourceTree = "<group>"; };
 		1882FE77239FF19B0039600B /* FlickerImagesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickerImagesResponse.swift; sourceTree = "<group>"; };
 		1882FE7A23A028940039600B /* PhotoCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionCell.swift; sourceTree = "<group>"; };
@@ -187,7 +187,7 @@
 		1882FE72239FF0820039600B /* Responses */ = {
 			isa = PBXGroup;
 			children = (
-				1882FE73239FF0D10039600B /* Photo.swift */,
+				1882FE73239FF0D10039600B /* Image.swift */,
 				1882FE75239FF1280039600B /* ImagesPage.swift */,
 				1882FE77239FF19B0039600B /* FlickerImagesResponse.swift */,
 			);
@@ -281,7 +281,7 @@
 				1882FE44239E6CEB0039600B /* MapViewController.swift in Sources */,
 				1882FE71239FF0550039600B /* FlickerAPI.swift in Sources */,
 				1882FE76239FF1280039600B /* ImagesPage.swift in Sources */,
-				1882FE74239FF0D10039600B /* Photo.swift in Sources */,
+				1882FE74239FF0D10039600B /* Image.swift in Sources */,
 				1882FE6F239FE2950039600B /* DataController.swift in Sources */,
 				1882FE7B23A028940039600B /* PhotoCollectionCell.swift in Sources */,
 				1882FE66239FD85D0039600B /* CollectionDataSource.swift in Sources */,
