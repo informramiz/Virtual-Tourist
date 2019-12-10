@@ -11,14 +11,14 @@ import CoreData
 
 class DataController {
     private let persistentContainer: NSPersistentContainer
-    private var viewContext: NSManagedObjectContext {
+    var viewContext: NSManagedObjectContext {
         return persistentContainer.viewContext
     }
-    private var backgroundContext: NSManagedObjectContext {
+    var backgroundContext: NSManagedObjectContext {
         return persistentContainer.newBackgroundContext()
     }
     
-    static var shared = DataController(modelName: "RR-VirtualTourist")
+    static var shared = DataController(modelName: "VirtualTourist")
     
     init(modelName: String) {
         persistentContainer = NSPersistentContainer(name: modelName)

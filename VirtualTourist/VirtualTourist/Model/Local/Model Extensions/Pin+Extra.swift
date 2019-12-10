@@ -7,9 +7,14 @@
 //
 
 import Foundation
+import MapKit
 extension Pin {
     public override func awakeFromInsert() {
         super.awakeFromInsert()
         creationDate = Date()
+    }
+    
+    func toCLLocationCoordinate2D() -> CLLocationCoordinate2D {
+        return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
     }
 }

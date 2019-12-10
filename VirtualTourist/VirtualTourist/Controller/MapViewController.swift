@@ -8,9 +8,11 @@
 
 import UIKit
 import MapKit
+import CoreData
 
 class MapViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
+    private var fetchedResultsContorller: NSFetchedResultsController<Pin>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,10 +26,42 @@ class MapViewController: UIViewController {
         mapView.addGestureRecognizer(gestureRecognizer)
     }
     
-    fileprivate func addMapMarker(_ pinCoordinates: CLLocationCoordinate2D) {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupFetchedResultsController()
+    }
+    
+    private func setupFetchedResultsController() {
+        let fetchRequest: NSFetchRequest<Pin> = Pin.fetchRequest()
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: true)]
+        fetchedResultsContorller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: DataController.shared.viewContext, sectionNameKeyPath: nil, cacheName: nil)
+//        fetchedResultsContorller.delegate = self
+        
+        do {
+            try fetchedResultsContorller.performFetch()
+            setupMapMarkers()
+        } catch {
+            fatalError(error.localizedDescription)
+        }
+    }
+    
+    private func setupMapMarkers() {
+        mapView.removeAnnotations(mapView.annotations)
+        let pins = fetchedResultsContorller.fetchedObjects ?? []
+        for pin in pins {
+            addMapMarker(pin.toCLLocationCoordinate2D())
+        }
+    }
+    
+    private func addMapMarker(_ pinCoordinates: CLLocationCoordinate2D) {
         let annotation = MKPointAnnotation()
         annotation.coordinate = pinCoordinates
         mapView.addAnnotation(annotation)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        fetchedResultsContorller = nil
     }
     
     @objc
@@ -36,8 +70,17 @@ class MapViewController: UIViewController {
             // gesture accepted
             let pinPoint = gesture.location(in: mapView)
             let pinCoordinates = mapView.convert(pinPoint, toCoordinateFrom: mapView)
+            addMarkerToDb(location: pinCoordinates)
             addMapMarker(pinCoordinates)
         }
+    }
+    
+    private func addMarkerToDb(location: CLLocationCoordinate2D) {
+        let pin = Pin(context: DataController.shared.viewContext)
+        pin.latitude = location.latitude
+        pin.longitude = location.longitude
+        DataController.shared.viewContext.insert(pin)
+        try? DataController.shared.viewContext.save()
     }
 }
 
@@ -61,3 +104,21 @@ extension MapViewController: MKMapViewDelegate {
     }
 }
 
+//extension MapViewController : NSFetchedResultsControllerDelegate {
+//    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+//        let a = 0
+//        print(a)
+//    }
+//
+//    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+//        print("item changed")
+//    }
+//
+//    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
+//        print("section changed")
+//    }
+//
+//    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+//        setupMapMarkers()
+//    }
+//}
