@@ -18,6 +18,8 @@
 		1882FE5D239FD17B0039600B /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1882FE5C239FD17B0039600B /* UIViewController+Extension.swift */; };
 		1882FE63239FD4990039600B /* MyUICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1882FE62239FD4990039600B /* MyUICollectionView.swift */; };
 		1882FE66239FD85D0039600B /* CollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1882FE65239FD85D0039600B /* CollectionDataSource.swift */; };
+		1882FE6B239FE1700039600B /* Pin+Extra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1882FE6A239FE1700039600B /* Pin+Extra.swift */; };
+		1882FE6D239FE1A30039600B /* Photo+Extra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1882FE6C239FE1A30039600B /* Photo+Extra.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		1882FE5C239FD17B0039600B /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		1882FE62239FD4990039600B /* MyUICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUICollectionView.swift; sourceTree = "<group>"; };
 		1882FE65239FD85D0039600B /* CollectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDataSource.swift; sourceTree = "<group>"; };
+		1882FE6A239FE1700039600B /* Pin+Extra.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pin+Extra.swift"; sourceTree = "<group>"; };
+		1882FE6C239FE1A30039600B /* Photo+Extra.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Photo+Extra.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,8 +84,9 @@
 		1882FE56239E6D120039600B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1882FE68239FE1530039600B /* Remote */,
+				1882FE67239FE14A0039600B /* Local */,
 				1882FE64239FD81A0039600B /* Common */,
-				1882FE48239E6CEB0039600B /* VirtualTourist.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -136,6 +141,31 @@
 				1882FE65239FD85D0039600B /* CollectionDataSource.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		1882FE67239FE14A0039600B /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				1882FE69239FE15E0039600B /* Model Extensions */,
+				1882FE48239E6CEB0039600B /* VirtualTourist.xcdatamodeld */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		1882FE68239FE1530039600B /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		1882FE69239FE15E0039600B /* Model Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1882FE6A239FE1700039600B /* Pin+Extra.swift */,
+				1882FE6C239FE1A30039600B /* Photo+Extra.swift */,
+			);
+			path = "Model Extensions";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,8 +242,10 @@
 				1882FE5D239FD17B0039600B /* UIViewController+Extension.swift in Sources */,
 				1882FE4A239E6CEB0039600B /* VirtualTourist.xcdatamodeld in Sources */,
 				1882FE5A239E7D770039600B /* AlbumViewController.swift in Sources */,
+				1882FE6D239FE1A30039600B /* Photo+Extra.swift in Sources */,
 				1882FE44239E6CEB0039600B /* MapViewController.swift in Sources */,
 				1882FE66239FD85D0039600B /* CollectionDataSource.swift in Sources */,
+				1882FE6B239FE1700039600B /* Pin+Extra.swift in Sources */,
 				1882FE63239FD4990039600B /* MyUICollectionView.swift in Sources */,
 				1882FE40239E6CEB0039600B /* AppDelegate.swift in Sources */,
 				1882FE42239E6CEB0039600B /* SceneDelegate.swift in Sources */,
