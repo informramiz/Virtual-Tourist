@@ -20,6 +20,7 @@
 		1882FE66239FD85D0039600B /* CollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1882FE65239FD85D0039600B /* CollectionDataSource.swift */; };
 		1882FE6B239FE1700039600B /* Pin+Extra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1882FE6A239FE1700039600B /* Pin+Extra.swift */; };
 		1882FE6D239FE1A30039600B /* Photo+Extra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1882FE6C239FE1A30039600B /* Photo+Extra.swift */; };
+		1882FE6F239FE2950039600B /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1882FE6E239FE2950039600B /* DataController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		1882FE65239FD85D0039600B /* CollectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDataSource.swift; sourceTree = "<group>"; };
 		1882FE6A239FE1700039600B /* Pin+Extra.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pin+Extra.swift"; sourceTree = "<group>"; };
 		1882FE6C239FE1A30039600B /* Photo+Extra.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Photo+Extra.swift"; sourceTree = "<group>"; };
+		1882FE6E239FE2950039600B /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 			children = (
 				1882FE69239FE15E0039600B /* Model Extensions */,
 				1882FE48239E6CEB0039600B /* VirtualTourist.xcdatamodeld */,
+				1882FE6E239FE2950039600B /* DataController.swift */,
 			);
 			path = Local;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 				1882FE5A239E7D770039600B /* AlbumViewController.swift in Sources */,
 				1882FE6D239FE1A30039600B /* Photo+Extra.swift in Sources */,
 				1882FE44239E6CEB0039600B /* MapViewController.swift in Sources */,
+				1882FE6F239FE2950039600B /* DataController.swift in Sources */,
 				1882FE66239FD85D0039600B /* CollectionDataSource.swift in Sources */,
 				1882FE6B239FE1700039600B /* Pin+Extra.swift in Sources */,
 				1882FE63239FD4990039600B /* MyUICollectionView.swift in Sources */,
