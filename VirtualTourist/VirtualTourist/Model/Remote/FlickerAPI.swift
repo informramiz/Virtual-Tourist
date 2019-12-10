@@ -72,10 +72,11 @@ class FlickerAPI {
     }
     
     class func downloadImage(url: String, completion: @escaping (Data?, Error?) -> Void) {
-        URLSession.shared.dataTask(with: URL(string: url)!) { (data, response, error) in
+        let task = URLSession.shared.dataTask(with: URL(string: url)!) { (data, response, error) in
             DispatchQueue.main.async {
                 completion(data, error)
             }
         }
+        task.resume()
     }
 }
