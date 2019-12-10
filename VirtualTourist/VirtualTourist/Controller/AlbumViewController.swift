@@ -32,6 +32,7 @@ class AlbumViewController: UIViewController {
         annotation.coordinate = pin.toCLLocationCoordinate2D()
         mapView.addAnnotation(annotation)
         mapView.setCenter(annotation.coordinate, animated: false)
+        collectionView.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -116,5 +117,11 @@ class AlbumViewController: UIViewController {
     @IBAction func newCollection(_ sender: Any) {
         collectionDataSource.deleteAllItems()
         fetchPhotosFromNetwork()
+    }
+}
+
+extension AlbumViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionDataSource.deleteItem(at: indexPath)
     }
 }
