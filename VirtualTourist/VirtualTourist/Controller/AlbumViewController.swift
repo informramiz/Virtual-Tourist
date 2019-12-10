@@ -23,7 +23,15 @@ class AlbumViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         noImagesLabel.isHidden = true
+        setupMap()
+    }
+    
+    private func setupMap() {
         mapView.isUserInteractionEnabled = false
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = pin.toCLLocationCoordinate2D()
+        mapView.addAnnotation(annotation)
+        mapView.setCenter(annotation.coordinate, animated: false)
     }
     
     override func viewWillAppear(_ animated: Bool) {
