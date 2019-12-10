@@ -16,6 +16,7 @@
 		1882FE4F239E6CEF0039600B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1882FE4D239E6CEF0039600B /* LaunchScreen.storyboard */; };
 		1882FE5A239E7D770039600B /* AlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1882FE59239E7D770039600B /* AlbumViewController.swift */; };
 		1882FE5D239FD17B0039600B /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1882FE5C239FD17B0039600B /* UIViewController+Extension.swift */; };
+		1882FE63239FD4990039600B /* MyUICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1882FE62239FD4990039600B /* MyUICollectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		1882FE50239E6CEF0039600B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1882FE59239E7D770039600B /* AlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewController.swift; sourceTree = "<group>"; };
 		1882FE5C239FD17B0039600B /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		1882FE62239FD4990039600B /* MyUICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUICollectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,8 @@
 		1882FE58239E6D6A0039600B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1882FE61239FD4200039600B /* Custom Views */,
+				1882FE5E239FD3BE0039600B /* extensions */,
 				1882FE45239E6CEB0039600B /* Main.storyboard */,
 				1882FE4D239E6CEF0039600B /* LaunchScreen.storyboard */,
 			);
@@ -106,6 +110,21 @@
 				1882FE5C239FD17B0039600B /* UIViewController+Extension.swift */,
 			);
 			path = extensions;
+			sourceTree = "<group>";
+		};
+		1882FE5E239FD3BE0039600B /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
+		1882FE61239FD4200039600B /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				1882FE62239FD4990039600B /* MyUICollectionView.swift */,
+			);
+			path = "Custom Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,6 +202,7 @@
 				1882FE4A239E6CEB0039600B /* VirtualTourist.xcdatamodeld in Sources */,
 				1882FE5A239E7D770039600B /* AlbumViewController.swift in Sources */,
 				1882FE44239E6CEB0039600B /* MapViewController.swift in Sources */,
+				1882FE63239FD4990039600B /* MyUICollectionView.swift in Sources */,
 				1882FE40239E6CEB0039600B /* AppDelegate.swift in Sources */,
 				1882FE42239E6CEB0039600B /* SceneDelegate.swift in Sources */,
 			);
