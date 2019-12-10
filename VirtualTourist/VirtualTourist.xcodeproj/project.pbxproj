@@ -66,6 +66,7 @@
 				1882FE57239E6D530039600B /* Controller */,
 				1882FE56239E6D120039600B /* Model */,
 				1882FE3F239E6CEB0039600B /* AppDelegate.swift */,
+				1882FE41239E6CEB0039600B /* SceneDelegate.swift */,
 				1882FE4B239E6CEF0039600B /* Assets.xcassets */,
 				1882FE50239E6CEF0039600B /* Info.plist */,
 			);
@@ -84,7 +85,6 @@
 			isa = PBXGroup;
 			children = (
 				1882FE5B239FD13C0039600B /* extensions */,
-				1882FE41239E6CEB0039600B /* SceneDelegate.swift */,
 				1882FE43239E6CEB0039600B /* MapViewController.swift */,
 				1882FE59239E7D770039600B /* AlbumViewController.swift */,
 			);
