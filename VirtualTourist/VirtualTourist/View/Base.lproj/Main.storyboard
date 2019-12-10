@@ -73,7 +73,7 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Images" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uLt-Vh-wzL">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Images" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uLt-Vh-wzL" userLabel="No Images Label">
                                 <rect key="frame" x="176" y="547.5" width="82" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -113,6 +113,12 @@
                         <viewLayoutGuide key="safeArea" id="Gba-fA-MeA"/>
                     </view>
                     <navigationItem key="navigationItem" id="hH2-Xp-vGY"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="Kqi-BG-2h4" id="3CA-8Y-As2"/>
+                        <outlet property="collectionView" destination="eFl-An-ump" id="s7Y-Q1-jDH"/>
+                        <outlet property="mapView" destination="YDC-8Y-1JJ" id="0Sv-A6-a7a"/>
+                        <outlet property="noImagesLabel" destination="uLt-Vh-wzL" id="3LC-a3-1bg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jvn-fh-O7J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

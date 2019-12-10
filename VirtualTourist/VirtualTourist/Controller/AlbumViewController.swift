@@ -7,9 +7,14 @@
 //
 
 import UIKit
+import MapKit
 
 class AlbumViewController: UIViewController {
-
+    @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var noImagesLabel: UILabel!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
