@@ -19,11 +19,21 @@ class MapViewController: UIViewController {
         // Do any additional setup after loading the view.
         mapView.delegate = self
         addMapGesture()
+        updateMapCenter()
     }
     
     private func addMapGesture() {
         let gestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(addMarker(gesture:)))
         mapView.addGestureRecognizer(gestureRecognizer)
+    }
+    
+    private func updateMapCenter() {
+        guard UserDefaults.standard.hasData() else { return }
+        
+        let center = CLLocationCoordinate2D(latitude: UserDefaults.standard.getLatitude(), longitude: UserDefaults.standard.getLongitude())
+        let span = MKCoordinateSpan(latitudeDelta: UserDefaults.standard.getLatitudeDelta(), longitudeDelta: UserDefaults.standard.getLongitudeDelta())
+        let region = MKCoordinateRegion(center: center, span: span)
+        mapView.setRegion(region, animated: false)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -121,6 +131,15 @@ extension MapViewController: MKMapViewDelegate {
         }
         
         return nil
+    }
+    
+    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+        let center = mapView.centerCoordinate
+        let span = mapView.region.span
+        UserDefaults.standard.setLatitude(latitude: center.latitude)
+        UserDefaults.standard.setLongitude(longitude: center.longitude)
+        UserDefaults.standard.setLatitudeDelta(delta: span.latitudeDelta)
+        UserDefaults.standard.setLongitudeDelta(delta: span.longitudeDelta)
     }
 }
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		183650FE23A0579600A188A5 /* UserDefaults+VirtualTourist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183650FD23A0579600A188A5 /* UserDefaults+VirtualTourist.swift */; };
 		1882FE40239E6CEB0039600B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1882FE3F239E6CEB0039600B /* AppDelegate.swift */; };
 		1882FE42239E6CEB0039600B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1882FE41239E6CEB0039600B /* SceneDelegate.swift */; };
 		1882FE44239E6CEB0039600B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1882FE43239E6CEB0039600B /* MapViewController.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		183650FD23A0579600A188A5 /* UserDefaults+VirtualTourist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+VirtualTourist.swift"; sourceTree = "<group>"; };
 		1882FE3C239E6CEB0039600B /* VirtualTourist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VirtualTourist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1882FE3F239E6CEB0039600B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1882FE41239E6CEB0039600B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				1882FE69239FE15E0039600B /* Model Extensions */,
 				1882FE48239E6CEB0039600B /* VirtualTourist.xcdatamodeld */,
 				1882FE6E239FE2950039600B /* DataController.swift */,
+				183650FD23A0579600A188A5 /* UserDefaults+VirtualTourist.swift */,
 			);
 			path = Local;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1882FE5D239FD17B0039600B /* UIViewController+Extension.swift in Sources */,
+				183650FE23A0579600A188A5 /* UserDefaults+VirtualTourist.swift in Sources */,
 				1882FE78239FF19B0039600B /* FlickerImagesResponse.swift in Sources */,
 				1882FE4A239E6CEB0039600B /* VirtualTourist.xcdatamodeld in Sources */,
 				1882FE5A239E7D770039600B /* AlbumViewController.swift in Sources */,
