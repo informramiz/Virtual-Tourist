@@ -40,7 +40,7 @@ class AlbumViewController: UIViewController {
     private func loadPhotos() {
         let fetchRequest: NSFetchRequest<Photo> = Photo.fetchRequest()
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: true)]
-        fetchRequest.predicate = NSPredicate(format: "pin", pin)
+        fetchRequest.predicate = NSPredicate(format: "pin = %@", pin)
         collectionDataSource = CollectionDataSource(collectionView: collectionView, viewContext: DataController.shared.viewContext, fetchRequest: fetchRequest, configureCell: { (cell, photo) in
             if let imageData = photo.imageData {
                 let image = UIImage(data: imageData)
@@ -61,7 +61,7 @@ class AlbumViewController: UIViewController {
     private func downloadImage(_ photo: Photo) {
         FlickerAPI.downloadImage(url: photo.imageUrl!) { (data, error) in
             guard let data = data else {return}
-            photo.imageData = data
+            photo.imageData = UIImage(data: data)?.pngData()
             try? DataController.shared.viewContext.save()
         }
     }
@@ -84,6 +84,7 @@ class AlbumViewController: UIViewController {
                 DataController.shared.viewContext.insert(photo)
             }
             try? DataController.shared.viewContext.save()
+            self.collectionView.reloadData()
         }
     }
     
