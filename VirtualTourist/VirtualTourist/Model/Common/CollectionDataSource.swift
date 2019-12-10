@@ -24,6 +24,13 @@ class CollectionDataSource<EntityType: NSManagedObject, CellType: UICollectionVi
     var isEditingPossible: Bool {
         return numberOfRowsIn(section: 0) > 0
     }
+    var totalItemsCount: Int {
+        return fetchedResultsController.fetchedObjects?.count ?? 0
+    }
+    
+    var isEmpty: Bool {
+        return totalItemsCount == 0
+    }
     
     init(collectionView: MyUICollectionView, viewContext: NSManagedObjectContext, fetchRequest: NSFetchRequest<EntityType>,
          configureCell: @escaping (CellType, EntityType) -> Void) {
@@ -32,15 +39,12 @@ class CollectionDataSource<EntityType: NSManagedObject, CellType: UICollectionVi
         self.configureCell = configureCell
         fetchedResultsController = NSFetchedResultsController<EntityType>(fetchRequest: fetchRequest, managedObjectContext: viewContext, sectionNameKeyPath: nil, cacheName: nil)
         super.init()
-        loadData()
     }
     
-    private func loadData() {
-        collectionView.dataSource = self
+    func loadData() {
         fetchedResultsController.delegate = self
         do {
             try fetchedResultsController.performFetch()
-            collectionView.reloadData()
         } catch  {
             print(error.localizedDescription)
         }
@@ -61,17 +65,6 @@ class CollectionDataSource<EntityType: NSManagedObject, CellType: UICollectionVi
         configureCell(cell, model)
         return cell
     }
-    
-    
-    
-    // MARK: - Table View Data Source
-
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-       switch editingStyle {
-       case .delete: deleteItem(at: indexPath)
-       default: () // Unsupported
-       }
-   }
     
     /// Deletes the item at the specified index path
     func deleteItem(at indexPath: IndexPath) {
