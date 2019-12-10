@@ -13,7 +13,7 @@ class FlickerAPI {
         static let API_KEY = "c6124d151ce794dbfb0fdbe6c138b0ce"
     }
     
-    static let itemsPerPage = 10
+    static let itemsPerPage = 20
     static let maxPages = 500
     
     enum EndPoint {

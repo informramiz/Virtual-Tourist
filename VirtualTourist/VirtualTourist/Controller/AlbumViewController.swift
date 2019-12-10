@@ -18,6 +18,7 @@ class AlbumViewController: UIViewController {
     @IBOutlet weak var newCollectionButton: UIButton!
     var pin: Pin!
     private var collectionDataSource: CollectionDataSource<Photo, PhotoCollectionCell>!
+    private var page = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,7 +68,10 @@ class AlbumViewController: UIViewController {
     
     private func fetchPhotosFromNetwork() {
         setLoading(true)
-        let page = (collectionDataSource.totalItemsCount/FlickerAPI.itemsPerPage) + 1
+        page += 1
+        if page > FlickerAPI.maxPages {
+            page = 1
+        }
         FlickerAPI.fetchPhotos(pin: pin, page: page) { (flickerImagesResponse, error) in
             guard let flickerImagesResponse = flickerImagesResponse else {
                 self.showErrorAlert(message: error!.localizedDescription)
