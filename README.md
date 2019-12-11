@@ -1,2 +1,4 @@
 # Virtual-Tourist
-This app allows users specify travel locations around the world, and create virtual photo albums for each location. The locations and photo albums will be stored in Core Data.
+This app allows users to drop pins and see the pictures at those locations. The pins and photos are stored in Core-Data. The app uses FlickerAPI for fetching photos for specific locations.
+
+![demo.gif](demo/virtual-tourist-demo.gif)
