@@ -2,7 +2,7 @@
 //  CollectionDataSource.swift
 //  VirtualTourist
 //
-//  Created by Apple on 10/12/2019.
+//  Created by Ramiz on 10/12/2019.
 //  Copyright © 2019 RR Inc. All rights reserved.
 //
 

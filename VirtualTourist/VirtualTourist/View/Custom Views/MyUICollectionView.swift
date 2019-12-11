@@ -37,6 +37,8 @@ class MyUICollectionView: UICollectionView {
             array.append(IndexSet(integer: sectionIndex))
             sectionChangeKeeper[type] = array
             
+            // as there is a full section change so individual item changes for these sections
+            // have no importance now so delete item changes accordinly
             clearItemsFor(section: sectionIndex, sectionType: type)
         }
         
