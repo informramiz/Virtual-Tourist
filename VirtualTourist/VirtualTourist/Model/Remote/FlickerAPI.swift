@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class FlickerAPI {
     struct Auth {
@@ -69,12 +70,26 @@ class FlickerAPI {
         task.resume()
     }
     
-    class func downloadImage(url: String, completion: @escaping (Data?, Error?) -> Void) {
-        let task = URLSession.shared.dataTask(with: URL(string: url)!) { (data, response, error) in
+    @discardableResult
+    class func downloadImage(url: String, completion: @escaping (UIImage?, Error?) -> Void) -> URLSessionDataTask{
+        let notifyOnMain = {(data: UIImage?, error: Error?) in
             DispatchQueue.main.async {
                 completion(data, error)
             }
         }
+        
+        let task = URLSession.shared.dataTask(with: URL(string: url)!) { (data, response, error) in
+            guard let data = data else {
+                notifyOnMain(nil, error)
+                return
+            }
+            
+            let image = UIImage(data: data)
+            DispatchQueue.main.async {
+                notifyOnMain(image, nil)
+            }
+        }
         task.resume()
+        return task
     }
 }
