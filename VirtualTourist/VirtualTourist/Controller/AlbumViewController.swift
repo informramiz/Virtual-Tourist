@@ -69,7 +69,7 @@ class AlbumViewController: UIViewController {
     
     private func downloadImage(_ photo: Photo) {
         FlickerAPI.downloadImage(url: photo.imageUrl!) { (data, error) in
-            guard let data = data else {return}
+            guard let data = data, !photo.isDeleted, photo.managedObjectContext != nil else {return}
             photo.imageData = UIImage(data: data)?.pngData()
             try? DataController.shared.viewContext.save()
         }
